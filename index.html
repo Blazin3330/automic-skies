@@ -33,13 +33,32 @@
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: 2rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #00ffff, #ff6b35);
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            font-weight: bold;
+        }
+        
+        .logo-gradient {
+            background: linear-gradient(90deg, #FF5555, #FF7155, #FF8E55, #FFAA55, #FFC655, #FFE355, #FFFF55, #558EFF, #55AAFF, #55C6FF, #55E3FF, #55FFFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+        
+        .logo-stars {
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
         
         .nav-buttons {
@@ -193,8 +212,8 @@
         .stats-container {
             max-width: 800px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            justify-content: space-between;
             gap: 2rem;
         }
         
@@ -261,6 +280,16 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
         }
         
         .floating-particles {
@@ -302,7 +331,14 @@
     <div class="floating-particles"></div>
     
     <nav class="navbar">
-        <div class="logo">⚡ Automic Skies</div>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Automic Skies Logo">
+            <span class="logo-text">
+                <span class="logo-stars">✦</span> 
+                <span class="logo-gradient">Automic Skies</span> 
+                <span class="logo-stars">✦</span>
+            </span>
+        </div>
         <div class="nav-buttons">
             <a href="https://discord.com/invite/GbmWwXkXKj" class="btn" target="_blank">Discord</a>
             <a href="https://store.automic-skies.com" class="btn store" target="_blank">Store</a>
