@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automic Skies - Advanced Automation Skyblock</title>
+    
+    <!-- Discord Embed Meta Tags -->
+    <meta property="og:title" content="Automic Skies - Advanced Automation Skyblock">
+    <meta property="og:description" content="Experience Minecraft Skyblock like never before! Build complex automated systems, master remastered redstone, and push the boundaries of what's possible. Advanced Automation • Remastered Redstone • Endless Possibilities">
+    <meta property="og:image" content="https://automic-skies.com/assets/logo.png">
+    <meta property="og:url" content="https://automic-skies.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Automic Skies">
+    <meta name="theme-color" content="#3498db">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automic Skies - Advanced Automation Skyblock">
+    <meta name="twitter:description" content="Experience Minecraft Skyblock like never before! Build complex automated systems, master remastered redstone, and push the boundaries of what's possible.">
+    <meta name="twitter:image" content="https://automic-skies.com/assets/logo.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="Automic Skies - The ultimate Minecraft Skyblock server featuring advanced automation, remastered redstone mechanics, custom machines, and endless possibilities. Coming Soon!">
+    <meta name="keywords" content="Minecraft, Skyblock, Automation, Redstone, Server, Gaming, Multiplayer">
+    <meta name="author" content="Automic Skies">
+    
     <style>
         * {
             margin: 0;
@@ -13,23 +34,56 @@
         
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d2d5f 100%);
+            background: linear-gradient(180deg, #87CEEB 0%, #4682B4 50%, #1e3a5f 100%);
             color: white;
             overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Minecraft-style clouds */
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0;
+            animation: float-cloud 30s infinite linear;
+        }
+        
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 0;
+        }
+        
+        @keyframes float-cloud {
+            0% { transform: translateX(-200px); }
+            100% { transform: translateX(calc(100vw + 200px)); }
         }
         
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(44, 62, 80, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 2px solid #00ffff;
+            border-bottom: 4px solid #2c3e50;
+            box-shadow: 0 4px 0 #1a252f;
         }
         
         .logo {
@@ -41,12 +95,17 @@
         }
         
         .logo img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
+            image-rendering: pixelated;
+            border: 2px solid #34495e;
+            background: #2c3e50;
+            box-shadow: 2px 2px 0 #1a252f;
         }
         
         .logo-text {
             font-weight: bold;
+            text-shadow: 2px 2px 0 #1a252f;
         }
         
         .logo-gradient {
@@ -58,7 +117,7 @@
         
         .logo-stars {
             color: white;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 0 #1a252f;
         }
         
         .nav-buttons {
@@ -68,100 +127,138 @@
         
         .btn {
             padding: 0.8rem 1.5rem;
-            background: linear-gradient(45deg, #00ffff, #0080ff);
+            background: #27ae60;
             border: none;
-            border-radius: 25px;
+            border-bottom: 4px solid #1e8449;
             color: white;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+            transition: all 0.1s ease;
+            font-family: Arial, sans-serif;
+            text-shadow: 1px 1px 0 #1e8449;
         }
         
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.5);
-            background: linear-gradient(45deg, #00cccc, #0066cc);
+            background: #2ecc71;
+            transform: translateY(1px);
+            border-bottom: 3px solid #1e8449;
+        }
+        
+        .btn:active {
+            transform: translateY(2px);
+            border-bottom: 2px solid #1e8449;
         }
         
         .btn.store {
-            background: linear-gradient(45deg, #ff6b35, #ff9500);
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            background: #e67e22;
+            border-bottom: 4px solid #d35400;
+            text-shadow: 1px 1px 0 #d35400;
         }
         
         .btn.store:hover {
-            background: linear-gradient(45deg, #e55a2b, #e67c00);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+            background: #f39c12;
+            border-bottom: 3px solid #d35400;
         }
         
         .hero {
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
-            background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            padding: 0 2rem;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1400px;
             width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
-            opacity: 0.3;
+        }
+        
+        .hero-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .hero-sidebar {
+            flex-shrink: 0;
         }
         
         .hero-title {
             font-size: 4rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #00ffff, #ff6b35, #00ffff);
+            font-weight: bold;
+            position: relative;
+            white-space: nowrap;
+        }
+        
+        .hero-title::before {
+            content: "AUTOMIC SKIES";
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            color: #2c3e50;
+            z-index: -1;
+            font-size: 4rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .hero-title-gradient {
+            background: linear-gradient(90deg, #FF5555, #FF7155, #FF8E55, #FFAA55, #FFC655, #FFE355, #FFFF55, #558EFF, #55AAFF, #55C6FF, #55E3FF, #55FFFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from { text-shadow: 0 0 30px rgba(0, 255, 255, 0.5); }
-            to { text-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 50px rgba(255, 107, 53, 0.3); }
+            white-space: nowrap;
         }
         
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            text-shadow: 2px 2px 0 #2c3e50;
+            color: #ecf0f1;
         }
         
-        .server-ip {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem 2rem;
-            border-radius: 10px;
+        .server-status {
+            background: #34495e;
+            border: 4px solid #2c3e50;
+            border-bottom: 6px solid #1a252f;
+            padding: 1.5rem 2rem;
             font-family: 'Courier New', monospace;
-            font-size: 1.2rem;
-            border: 2px solid #00ffff;
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            color: #f39c12;
+            text-shadow: 1px 1px 0 #2c3e50;
+            font-weight: bold;
+            box-shadow: 4px 4px 0 #1a252f;
+        }
+        
+        .discord-widget {
+            border: 4px solid #2c3e50;
+            border-bottom: 6px solid #1a252f;
+            overflow: hidden;
+            box-shadow: 4px 4px 0 #1a252f;
         }
         
         .features {
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            background: rgba(44, 62, 80, 0.3);
         }
         
         .features-title {
             text-align: center;
             font-size: 3rem;
             margin-bottom: 3rem;
-            background: linear-gradient(45deg, #00ffff, #ff6b35);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ecf0f1;
+            text-shadow: 3px 3px 0 #2c3e50;
         }
         
         .features-grid {
@@ -171,42 +268,45 @@
         }
         
         .feature-card {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 15px;
+            background: #34495e;
+            border: 4px solid #2c3e50;
+            border-bottom: 6px solid #1a252f;
             padding: 2rem;
             text-align: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+            box-shadow: 4px 4px 0 #1a252f;
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: #00ffff;
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 0 #1a252f;
         }
         
         .feature-icon {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
             display: block;
+            filter: drop-shadow(2px 2px 0 #2c3e50);
         }
         
         .feature-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #00ffff;
+            color: #3498db;
+            text-shadow: 1px 1px 0 #2c3e50;
         }
         
         .feature-description {
             line-height: 1.6;
-            opacity: 0.9;
+            color: #ecf0f1;
+            text-shadow: 1px 1px 0 #2c3e50;
         }
         
         .stats {
-            background: rgba(0, 0, 0, 0.3);
+            background: #2c3e50;
             padding: 3rem 2rem;
             text-align: center;
+            border-top: 4px solid #34495e;
         }
         
         .stats-container {
@@ -219,25 +319,32 @@
         
         .stat {
             padding: 1rem;
+            background: #34495e;
+            border: 3px solid #2c3e50;
+            border-bottom: 5px solid #1a252f;
+            box-shadow: 3px 3px 0 #1a252f;
+            flex: 1;
         }
         
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #00ffff;
+            color: #f39c12;
             display: block;
+            text-shadow: 2px 2px 0 #2c3e50;
         }
         
         .stat-label {
-            opacity: 0.8;
+            color: #ecf0f1;
             margin-top: 0.5rem;
+            text-shadow: 1px 1px 0 #2c3e50;
         }
         
         .footer {
-            background: rgba(0, 0, 0, 0.8);
+            background: #1a252f;
             text-align: center;
             padding: 2rem;
-            border-top: 2px solid #00ffff;
+            border-top: 4px solid #2c3e50;
         }
         
         .footer-content {
@@ -250,19 +357,21 @@
         }
         
         .footer-links a {
-            color: #00ffff;
+            color: #3498db;
             text-decoration: none;
             margin: 0 1rem;
             transition: color 0.3s ease;
+            text-shadow: 1px 1px 0 #000;
         }
         
         .footer-links a:hover {
-            color: #ff6b35;
+            color: #f39c12;
         }
         
         .copyright {
-            opacity: 0.7;
+            color: #95a5a6;
             font-size: 0.9rem;
+            text-shadow: 1px 1px 0 #000;
         }
         
         @media (max-width: 768px) {
@@ -290,45 +399,57 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .discord-widget {
+                width: 100%;
+                height: 400px;
+            }
         }
         
-        .floating-particles {
+        @media (max-width: 1200px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+        
+        /* Grass blocks scattered around */
+        .grass-blocks {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
+            z-index: -2;
         }
         
-        .particle {
+        .grass-block {
             position: absolute;
-            background: #00ffff;
-            border-radius: 50%;
-            animation: float 20s infinite linear;
+            width: 20px;
+            height: 20px;
+            background: #7CB342;
+            border: 2px solid #558B2F;
+            opacity: 0.1;
+            animation: float-block 40s infinite linear;
         }
         
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(100px);
-                opacity: 0;
-            }
+        @keyframes float-block {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="floating-particles"></div>
+    <div class="clouds"></div>
+    <div class="grass-blocks"></div>
     
     <nav class="navbar">
         <div class="logo">
@@ -346,10 +467,25 @@
     </nav>
     
     <section class="hero">
-        <h1 class="hero-title">AUTOMIC SKIES</h1>
-        <p class="hero-subtitle">Advanced Automation • Remastered Redstone • Endless Possibilities</p>
-        <div class="server-ip">play.automic-skies.com</div>
-        <a href="https://discord.com/invite/GbmWwXkXKj" class="btn" target="_blank">Join the Adventure</a>
+        <div class="hero-content">
+            <div class="hero-main">
+                <h1 class="hero-title">
+                    <span class="hero-title-gradient">AUTOMIC SKIES</span>
+                </h1>
+                <p class="hero-subtitle">Advanced Automation • Remastered Redstone • Endless Possibilities</p>
+                <div class="server-status">Coming Soon</div>
+                <a href="https://discord.com/invite/GbmWwXkXKj" class="btn" target="_blank">Join the Adventure</a>
+            </div>
+            <div class="hero-sidebar">
+                <iframe src="https://ptb.discord.com/widget?id=1406023065208492136&theme=dark" 
+                        width="350" 
+                        height="500" 
+                        allowtransparency="true" 
+                        frameborder="0" 
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                        class="discord-widget"></iframe>
+            </div>
+        </div>
     </section>
     
     <section class="features">
@@ -408,8 +544,8 @@
                 <div class="stat-label">Custom Features</div>
             </div>
             <div class="stat">
-                <span class="stat-number">Active</span>
-                <div class="stat-label">Community</div>
+                <span class="stat-number">Soon</span>
+                <div class="stat-label">Launch Status</div>
             </div>
         </div>
     </section>
@@ -419,7 +555,7 @@
             <div class="footer-links">
                 <a href="https://discord.com/invite/GbmWwXkXKj" target="_blank">Discord</a>
                 <a href="https://store.automic-skies.com" target="_blank">Store</a>
-                <a href="#" onclick="copyIP()">Copy IP</a>
+                <a href="#" onclick="comingSoonAlert()">Server Status</a>
             </div>
             <div class="copyright">
                 © 2025 Automic Skies. All rights reserved. | Minecraft Server
@@ -428,52 +564,154 @@
     </footer>
     
     <script>
-        // Create floating particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            
-            const size = Math.random() * 3 + 1;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            
-            document.querySelector('.floating-particles').appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 25000);
+        // Load and display the logo
+        async function loadLogo() {
+            try {
+                const logoData = await window.fs.readFile('Image 1');
+                const blob = new Blob([logoData], { type: 'image/png' });
+                const logoUrl = URL.createObjectURL(blob);
+                const logoImg = document.querySelector('.logo img');
+                if (logoImg) {
+                    logoImg.src = logoUrl;
+                }
+            } catch (error) {
+                console.log('Logo not found, using placeholder');
+            }
         }
         
-        // Create particles periodically
-        setInterval(createParticle, 2000);
+        // Load logo when page loads
+        window.addEventListener('load', loadLogo);
         
-        // Copy IP function
-        function copyIP() {
-            navigator.clipboard.writeText('play.automic-skies.com').then(() => {
-                // Create a temporary notification
-                const notification = document.createElement('div');
-                notification.textContent = 'Server IP copied to clipboard!';
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background: rgba(0, 255, 255, 0.9);
-                    color: #000;
-                    padding: 1rem 2rem;
-                    border-radius: 5px;
-                    z-index: 10000;
+        // Coming Soon alert
+        function comingSoonAlert() {
+            // Create a custom modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: #34495e;
+                border: 4px solid #2c3e50;
+                border-bottom: 6px solid #1a252f;
+                padding: 3rem;
+                text-align: center;
+                color: white;
+                font-size: 1.5rem;
+                font-weight: bold;
+                box-shadow: 4px 4px 0 #1a252f;
+                max-width: 400px;
+            `;
+            
+            modalContent.innerHTML = `
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🚧</div>
+                <div style="color: #f39c12; margin-bottom: 1rem; text-shadow: 1px 1px 0 #2c3e50;">Coming Soon!</div>
+                <div style="font-size: 1rem; margin-bottom: 2rem; color: #ecf0f1;">Automic Skies is currently in development. Join our Discord for updates!</div>
+                <button onclick="this.closest('div').parentElement.remove()" style="
+                    background: #27ae60;
+                    border: none;
+                    border-bottom: 4px solid #1e8449;
+                    color: white;
+                    padding: 0.8rem 1.5rem;
                     font-weight: bold;
-                `;
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.remove();
-                }, 2000);
+                    cursor: pointer;
+                    text-shadow: 1px 1px 0 #1e8449;
+                ">OK</button>
+            `;
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Remove modal when clicking outside
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
             });
+        }
+        
+        // Create Minecraft-style clouds
+        function createCloud() {
+            const cloud = document.createElement('div');
+            cloud.className = 'cloud';
+            
+            const width = Math.random() * 60 + 40;
+            const height = Math.random() * 30 + 20;
+            const top = Math.random() * 30 + 10;
+            
+            cloud.style.width = width + 'px';
+            cloud.style.height = height + 'px';
+            cloud.style.top = top + '%';
+            cloud.style.left = '-200px';
+            cloud.style.animationDuration = (Math.random() * 20 + 25) + 's';
+            cloud.style.animationDelay = Math.random() * 5 + 's';
+            
+            // Add cloud parts for blocky look
+            const part1 = document.createElement('div');
+            part1.style.cssText = `
+                width: ${width * 0.6}px;
+                height: ${height * 0.8}px;
+                top: ${height * 0.2}px;
+                left: ${width * 0.2}px;
+                background: rgba(255, 255, 255, 0.8);
+            `;
+            
+            const part2 = document.createElement('div');
+            part2.style.cssText = `
+                width: ${width * 0.4}px;
+                height: ${height * 0.6}px;
+                top: ${height * 0.1}px;
+                left: ${width * 0.5}px;
+                background: rgba(255, 255, 255, 0.8);
+            `;
+            
+            cloud.appendChild(part1);
+            cloud.appendChild(part2);
+            
+            document.querySelector('.clouds').appendChild(cloud);
+            
+            setTimeout(() => {
+                cloud.remove();
+            }, 50000);
+        }
+        
+        // Create grass blocks
+        function createGrassBlock() {
+            const block = document.createElement('div');
+            block.className = 'grass-block';
+            
+            block.style.left = Math.random() * 100 + '%';
+            block.style.animationDuration = (Math.random() * 20 + 30) + 's';
+            block.style.animationDelay = Math.random() * 10 + 's';
+            
+            document.querySelector('.grass-blocks').appendChild(block);
+            
+            setTimeout(() => {
+                block.remove();
+            }, 50000);
+        }
+        
+        // Create clouds and blocks periodically
+        setInterval(createCloud, 8000);
+        setInterval(createGrassBlock, 5000);
+        
+        // Create some initial clouds and blocks
+        for (let i = 0; i < 3; i++) {
+            setTimeout(createCloud, i * 3000);
+        }
+        
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createGrassBlock, i * 2000);
         }
         
         // Smooth scrolling for navigation
@@ -489,11 +727,6 @@
                 }
             });
         });
-        
-        // Add some initial particles
-        for (let i = 0; i < 10; i++) {
-            setTimeout(createParticle, i * 500);
-        }
     </script>
 </body>
 </html>
