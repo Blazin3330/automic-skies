@@ -2,33 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Redirecting to Discord...</title>
-  <meta http-equiv="refresh" content="0; url=https://discord.com/invite/GbmWwXkXKj">
-  <link rel="canonical" href="https://discord.com/invite/GbmWwXkXKj">
+  <title>Automic-Skies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: #1e1e1e;
-      color: #ccc;
-      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#1e1e1e, #2c2c2c);
+      color: #eee;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
+      text-align: center;
     }
+
     h1 {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
+      color: #00ffcc;
+      text-shadow: 0 0 5px #00ffcc;
     }
-    a {
-      color: #7289da;
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+
+    .button {
+      background-color: #7289da;
+      color: white;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
       text-decoration: none;
+    }
+
+    .button:hover {
+      background-color: #5b6eae;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <h1>Redirecting to Discord...</h1>
-  <p>If you're not redirected, <a href="https://discord.com/invite/GbmWwXkXKj">click here</a>.</p>
+  <h1>Welcome to Automic-Skies</h1>
+  <p>Your gateway to a custom Minecraft universe</p>
+  <a href="/discord" class="button">Join Our Discord</a>
+
+  <footer>© 2025 Automic-Skies</footer>
+
+  <script>
+    const path = window.location.pathname;
+    if (path === "/discord") {
+      window.location.href = "https://discord.com/invite/GbmWwXkXKj";
+    }
+  </script>
 </body>
 </html>
