@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=https://discord.com/invite/GbmWwXkXKj" />
-  <title>Redirecting...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automic Skies Discord</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.imgur.com/3ZQ3Z3Z.png') repeat; /* Replace with your own pixel background if desired */
+      font-family: 'Minecraftia', sans-serif;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border: 2px solid #4caf50;
+      border-radius: 10px;
+      display: inline-block;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .loader {
+      margin: 20px auto;
+      width: 40px;
+      height: 40px;
+      border: 5px solid #4caf50;
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://discord.com/invite/GbmWwXkXKj"; // Replace with your actual invite
+    }, 3000);
+  </script>
 </head>
 <body>
-  <p>If you're not redirected, <a href="https://discord.com/invite/GbmWwXkXKj">click here</a>.</p>
+  <div class="container">
+    <h1>Joining Automic Skies Discord...</h1>
+    <div class="loader"></div>
+    <p>Hang tight! You're being redirected.</p>
+  </div>
 </body>
 </html>
