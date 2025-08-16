@@ -1,73 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automic Skies Portal</title>
+  <meta charset="UTF-8">
+  <title>Redirecting to Discord...</title>
+  <meta http-equiv="refresh" content="0; url=https://discord.com/invite/GbmWwXkXKj">
+  <link rel="canonical" href="https://discord.com/invite/GbmWwXkXKj">
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: url('https://i.imgur.com/3ZQ3Z3Z.png') repeat;
-      font-family: 'Minecraftia', sans-serif;
-      color: #fff;
-      text-align: center;
+      background-color: #1e1e1e;
+      color: #ccc;
+      font-family: "Segoe UI", sans-serif;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
       height: 100vh;
+      margin: 0;
     }
-
-    .container {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border: 2px solid #4caf50;
-      border-radius: 10px;
-      display: inline-block;
-      animation: fadeIn 1s ease-in-out;
-    }
-
     h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
     }
-
-    .loader {
-      margin: 20px auto;
-      width: 40px;
-      height: 40px;
-      border: 5px solid #4caf50;
-      border-top: 5px solid transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    a {
+      color: #7289da;
+      text-decoration: none;
     }
   </style>
-  <script>
-    const host = window.location.hostname;
-
-    const redirectTo = host === "discord.automic-skies.com"
-      ? "https://discord.com/invite/GbmWwXkXKj"
-      : "https://automic-skies.com/home";
-
-    setTimeout(() => {
-      window.location.href = redirectTo;
-    }, 3000);
-  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Teleporting to Automic Skies...</h1>
-    <div class="loader"></div>
-    <p>Hang tight! You're being redirected.</p>
-  </div>
+  <h1>Redirecting to Discord...</h1>
+  <p>If you're not redirected, <a href="https://discord.com/invite/GbmWwXkXKj">click here</a>.</p>
 </body>
 </html>
