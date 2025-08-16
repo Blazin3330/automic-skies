@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automic Skies Discord</title>
+  <title>Automic Skies Portal</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('https://i.imgur.com/3ZQ3Z3Z.png') repeat; /* Replace with your own pixel background if desired */
+      background: url('https://i.imgur.com/3ZQ3Z3Z.png') repeat;
       font-family: 'Minecraftia', sans-serif;
       color: #fff;
       text-align: center;
@@ -52,14 +52,20 @@
     }
   </style>
   <script>
+    const host = window.location.hostname;
+
+    const redirectTo = host === "discord.automic-skies.com"
+      ? "https://discord.com/invite/GbmWwXkXKj"
+      : "https://automic-skies.com/home";
+
     setTimeout(() => {
-      window.location.href = "https://discord.com/invite/GbmWwXkXKj"; // Replace with your actual invite
+      window.location.href = redirectTo;
     }, 3000);
   </script>
 </head>
 <body>
   <div class="container">
-    <h1>Joining Automic Skies Discord...</h1>
+    <h1>Teleporting to Automic Skies...</h1>
     <div class="loader"></div>
     <p>Hang tight! You're being redirected.</p>
   </div>
