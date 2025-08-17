@@ -381,36 +381,174 @@
                 padding: 1rem;
                 flex-direction: column;
                 gap: 1rem;
+                text-align: center;
             }
             
             .hero {
                 padding: 0 1rem;
                 min-height: 100vh;
+                text-align: center;
             }
             
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
             }
             
             .hero-title::before {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
                 top: 3px;
                 left: 3px;
             }
             
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 text-align: center;
+                margin-bottom: 2rem;
+                line-height: 1.4;
             }
             
             .server-status {
-                font-size: 1.2rem;
-                padding: 1rem 1.5rem;
+                font-size: 1.3rem;
+                padding: 1.2rem 2rem;
+                margin-bottom: 2rem;
             }
             
             .nav-buttons {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 0.8rem;
+            }
+            
+            .features {
+                padding: 4rem 1.5rem;
+            }
+            
+            .features-title {
+                font-size: 2.8rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .feature-card {
+                padding: 2rem 1.5rem;
+                text-align: center;
+            }
+            
+            .feature-icon {
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .feature-title {
+                font-size: 1.4rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .feature-description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .stats {
+                padding: 2.5rem 1rem;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .stat {
+                width: 100%;
+                max-width: 250px;
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+                margin-top: 0.8rem;
+            }
+            
+            .logo {
+                flex-direction: row;
+                text-align: center;
+                font-size: 1.6rem;
+                justify-content: center;
+            }
+            
+            .logo img {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .discord-widget {
+                width: 100%;
+                height: 450px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .btn {
+                padding: 1rem 2.5rem;
+                font-size: 1.1rem;
+                min-width: 140px;
+            }
+            
+            .footer {
+                padding: 2.5rem 1rem;
+            }
+            
+            .footer-links {
+                margin-bottom: 1.5rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+            
+            .footer-links a {
+                font-size: 1.1rem;
+                margin: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-title::before {
+                font-size: 2.2rem;
+                top: 2px;
+                left: 2px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                line-height: 1.5;
+                margin-bottom: 1.5rem;
+            }
+            
+            .server-status {
+                font-size: 1.1rem;
+                padding: 1rem 1.5rem;
+                margin-bottom: 1.5rem;
             }
             
             .features {
@@ -418,33 +556,31 @@
             }
             
             .features-title {
-                font-size: 2.5rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
             }
             
             .feature-card {
-                padding: 1.5rem;
+                padding: 1.5rem 1rem;
             }
             
-            .stats-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
+            .feature-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
             }
             
-            .stat {
-                width: 100%;
-                max-width: 200px;
+            .feature-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .feature-description {
+                font-size: 0.95rem;
+                line-height: 1.5;
             }
             
             .logo {
-                flex-direction: column;
-                text-align: center;
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             
             .logo img {
@@ -452,56 +588,87 @@
                 height: 40px;
             }
             
-            .hero-content {
-                flex-direction: column;
-                gap: 2rem;
+            .navbar {
+                padding: 0.8rem;
             }
             
-            .discord-widget {
-                width: 100%;
-                height: 400px;
+            .nav-buttons {
+                gap: 0.6rem;
             }
             
             .btn {
-                padding: 1rem 2rem;
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+                min-width: 120px;
+            }
+            
+            .discord-widget {
+                height: 400px;
+                max-width: 350px;
+            }
+            
+            .stats-container {
+                gap: 1.2rem;
+            }
+            
+            .stat {
+                max-width: 200px;
+                padding: 1.2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .footer-links {
+                gap: 1.2rem;
+            }
+            
+            .footer-links a {
                 font-size: 1rem;
             }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 360px) {
             .hero-title {
-                font-size: 2rem;
+                font-size: 1.9rem;
             }
             
             .hero-title::before {
-                font-size: 2rem;
-                top: 2px;
-                left: 2px;
+                font-size: 1.9rem;
             }
             
             .hero-subtitle {
                 font-size: 1rem;
-                line-height: 1.4;
+            }
+            
+            .server-status {
+                font-size: 1rem;
+                padding: 0.9rem 1.2rem;
             }
             
             .features-title {
                 font-size: 2rem;
             }
             
-            .feature-icon {
-                font-size: 3rem;
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.95rem;
+                min-width: 110px;
             }
             
             .logo {
                 font-size: 1.2rem;
             }
             
-            .navbar {
-                padding: 0.8rem;
+            .logo img {
+                width: 35px;
+                height: 35px;
             }
             
             .discord-widget {
-                height: 350px;
+                height: 380px;
+                max-width: 320px;
             }
         }
         
@@ -556,7 +723,7 @@
         </div>
         <div class="nav-buttons">
             <a href="/discord/" class="btn" target="_blank">Discord</a>
-            <a href="https://store.automic-skies.com" class="btn store" target="_blank">Store</a>
+            <a href="/store/" class="btn store" target="_blank">Store</a>
         </div>
     </nav>
     
@@ -648,7 +815,7 @@
         <div class="footer-content">
             <div class="footer-links">
                 <a href="/discord/" target="_blank">Discord</a>
-                <a href="https://store.automic-skies.com" target="_blank">Store</a>
+                <a href="/store/" target="_blank">Store</a>
                 <a href="#" onclick="comingSoonAlert()">Server Status</a>
             </div>
             <div class="copyright">
